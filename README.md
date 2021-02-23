@@ -27,7 +27,9 @@ Python3 should be already installed.
     POST /auth/users/  
     data = {'username': 'username',
             'password': 'password',
-            'email': 'email'}
+            'email': 'email',
+            'city': 'city' (CharField, max_length=30),
+            'is_administrator': True/False(default)}
     ```
 2) Create JWT token: 
     ```
