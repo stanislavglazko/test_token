@@ -38,16 +38,16 @@ Python3 should be already installed.
     ```
     GET /auth/users/me/  'Bearer ' + token
     ```
-4) update user:
+4) Update user:
     ```
     PUT /accounts/profile/id 'Bearer ' + token
-    data = {'city': 'Moscow'}
+    data = {'city': 'city', 'is_administrator': True/False}
     ```
-5) delete user:
+5) Delete user:
     ```
     DELETE /accounts/profile/id 'Bearer ' + token
     ```
-6) show all users:
+6) Show all users:
     ```
     GET /accounts/all-profiles 'Bearer ' + token
     ```
