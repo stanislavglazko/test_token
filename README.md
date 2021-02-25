@@ -41,7 +41,7 @@ Python3 should be already installed.
     ```
 4) Get info about UserProfile via token:
     ```
-    GET accounts/accounts/id  'Bearer ' + token
+    GET accounts/id  'Bearer ' + token
     ```
 5) Update UserProfile:
     ```
