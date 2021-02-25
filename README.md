@@ -5,6 +5,9 @@
 [![Build Status](https://travis-ci.com/stanislavglazko/test_token.svg?branch=main)](https://travis-ci.com/stanislavglazko/test_token)
 
 My tool makes CRUD users via JWT.
+You create user, my tool automatically creates UserProfile for you.
+You can read, update or delete UserProfile.
+If you delete UserProfile, user will be deleted too.
 
 ### How to install
 Python3 should be already installed.
@@ -25,9 +28,7 @@ Python3 should be already installed.
     POST /auth/users/  
     data = {'username': 'username',
             'password': 'password',
-            'email': 'email',
-            'city': 'city' (CharField, max_length=30),
-            'is_administrator': True/False(default)}
+            'email': 'email'}
     ```
 2) Create JWT token: 
     ```
@@ -38,16 +39,20 @@ Python3 should be already installed.
     ```
     GET /auth/users/me/  'Bearer ' + token
     ```
-4) Update user:
+4) Get info about UserProfile via token:
     ```
-    PUT /accounts/profile/id 'Bearer ' + token
+    GET accounts/accounts/id  'Bearer ' + token
+    ```
+5) Update UserProfile:
+    ```
+    PUT /accounts/id/ 'Bearer ' + token
     data = {'city': 'city', 'is_administrator': True/False}
     ```
-5) Delete user:
+6) Delete UserProfile and user:
     ```
-    DELETE /accounts/profile/id 'Bearer ' + token
+    DELETE /accounts/accounts/id/ 'Bearer ' + token
     ```
-6) Show all users:
+ 7) Show all UserProfiles:
     ```
-    GET /accounts/all-profiles 'Bearer ' + token
+    GET /accounts/accounts/ 'Bearer ' + token
     ```
