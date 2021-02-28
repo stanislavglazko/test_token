@@ -1,10 +1,10 @@
-# CRUD users via JWT
+# CRUD users via token
 
 <a href="https://codeclimate.com/github/stanislavglazko/test_token/maintainability"><img src="https://api.codeclimate.com/v1/badges/b7b30af125ffdfe678d1/maintainability" /></a>
 
 [![Build Status](https://travis-ci.com/stanislavglazko/test_token.svg?branch=main)](https://travis-ci.com/stanislavglazko/test_token)
 
-My tool makes CRUD users via JWT.
+My tool makes CRUD users via token.
 You create user, my tool automatically creates UserProfile for you.
 You can read, update or delete UserProfile.
 If you delete UserProfile, user will be deleted too.
@@ -30,29 +30,29 @@ Python3 should be already installed.
             'password': 'password',
             'email': 'email'}
     ```
-2) Create JWT token: 
+2) Login and get token:
     ```
-    POST /auth/jwt/create/  
+    POST /auth/token/login/
     data = {'username': 'username', 'password': 'password'}
     ```
 3) Get info about user via token:
     ```
-    GET /auth/users/me/  'Bearer ' + token
+    GET /auth/users/me/  'Token ' + token
     ```
 4) Get info about UserProfile via token:
     ```
-    GET accounts/id  'Bearer ' + token
+    GET accounts/accounts/id  'Token ' + token
     ```
 5) Update UserProfile:
     ```
-    PUT /accounts/id/ 'Bearer ' + token
+    PUT /accounts/accounts/id/ 'Token ' + token
     data = {'city': 'city', 'is_administrator': True/False}
     ```
 6) Delete UserProfile and user:
     ```
-    DELETE /accounts/accounts/id/ 'Bearer ' + token
+    DELETE /accounts/accounts/id/ 'Token ' + token
     ```
  7) Show all UserProfiles:
     ```
-    GET /accounts/accounts/ 'Bearer ' + token
+    GET /accounts/accounts/ 'Token ' + token
     ```
